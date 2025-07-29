@@ -19,9 +19,14 @@ jsonpatch==1.33
 jsonpointer==3.0.0
 langchain-core==0.3.72
 langchain-ollama==0.3.6
+langgraph==0.6.0
+langgraph-checkpoint==2.1.1
+langgraph-prebuilt==0.6.0
+langgraph-sdk==0.2.0
 langsmith==0.4.8
 ollama==0.5.1
 orjson==3.11.0
+ormsgpack==1.10.0
 packaging==25.0
 pydantic==2.11.7
 pydantic_core==2.33.2
@@ -39,4 +44,5 @@ typing_extensions==4.14.1
 tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.5.0
+xxhash==3.5.0
 zstandard==0.23.0
