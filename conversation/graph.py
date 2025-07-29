@@ -124,7 +124,7 @@ def response_to_user(state):
     result = chain.invoke({"message": message})
     print('Reply 2: ', result.reply)
     return AssistantState(
-        reply = state.reply,
+        reply = result.reply,
         is_task = state.is_task,
         message = state.message,
         user_id = state.user_id,
