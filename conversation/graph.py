@@ -34,7 +34,6 @@ def detect_task_intent(state: AssistantState) -> AssistantState:
     structured_llm = llm.with_structured_output(IsTodo)
     chain = detect_prompt | structured_llm
     result = chain.invoke({"message": message})
-    print('Result : ', result)
     return AssistantState(
         is_task = result.is_task,
         message = message,
@@ -62,7 +61,6 @@ def extract_task_content(state: AssistantState) -> AssistantState:
     structured_llm = llm.with_structured_output(ExtractedTask)
     chain = extract_prompt | structured_llm
     result = chain.invoke({"message": message})
-    print('Result of extract_task_content: ', result)
     return AssistantState(
         task_content= result.task_content,
         is_task = state.is_task,
@@ -118,11 +116,9 @@ Question : {message}""")
 
 def response_to_user(state):
     message = state.message
-    print('Reply 1 : ', state.reply)
     structured_llm = llm.with_structured_output(ReplyContent)
     chain = response_prompt | structured_llm 
     result = chain.invoke({"message": message})
-    print('Reply 2: ', result.reply)
     return AssistantState(
         reply = result.reply,
         is_task = state.is_task,
