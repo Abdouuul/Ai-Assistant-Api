@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'todolist',
     'drf_yasg',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'conversation',
     
 ]
 
